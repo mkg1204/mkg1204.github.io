@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/</loc>
+    <loc>https://mkg1204.github.io/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/</loc>
     
     <lastmod>2022-07-01</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/29/test/</loc>
+    <loc>https://mkg1204.github.io/project/2022/06/29/test/</loc>
     
     <lastmod>2022-06-30</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://mkg1204.github.io/project/about/index.html</loc>
     
     <lastmod>2022-06-29</lastmod>
     
@@ -30,7 +30,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://mkg1204.github.io/project</loc>
     <lastmod>2022-07-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -38,7 +38,7 @@
 
   
   <url>
-    <loc>http://example.com/tags/Tracking/</loc>
+    <loc>https://mkg1204.github.io/project/tags/Tracking/</loc>
     <lastmod>2022-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -47,7 +47,7 @@
 
   
   <url>
-    <loc>http://example.com/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <loc>https://mkg1204.github.io/project/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2022-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
