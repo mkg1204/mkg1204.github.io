@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/fluid.png">
-  <link rel="icon" href="/project/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,24 +19,24 @@
     <meta name="description" content="论文：https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2205.03806 代码：https:&#x2F;&#x2F;github.com&#x2F;SkyeSong38&#x2F;CSWinTT  Motivation 现有的基于Transformer的跟踪算法通过计算pixel-to-pixel的attention来捕获template和search之间的关系，但这种做法不可避免地忽略了目标地整体性，导致像素间相对位置关系的丢失。为了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【CVPR2022】Transformer Tracking with Cyclic Shifting Window Attention">
-<meta property="og:url" content="https://mkg1204.github.io/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/index.html">
+<meta property="og:url" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/index.html">
 <meta property="og:site_name" content="Kaigeの博客">
 <meta property="og:description" content="论文：https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2205.03806 代码：https:&#x2F;&#x2F;github.com&#x2F;SkyeSong38&#x2F;CSWinTT  Motivation 现有的基于Transformer的跟踪算法通过计算pixel-to-pixel的attention来捕获template和search之间的关系，但这种做法不可避免地忽略了目标地整体性，导致像素间相对位置关系的丢失。为了">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Framework.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Cyclic_shifting.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Spatial_Regularization.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results1.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results2.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation1.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation2.png">
-<meta property="og:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation3.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Framework.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Cyclic_shifting.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Spatial_Regularization.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results1.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results2.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation1.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation2.png">
+<meta property="og:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation3.png">
 <meta property="article:published_time" content="2022-06-30T12:31:54.000Z">
 <meta property="article:modified_time" content="2022-07-01T04:51:50.750Z">
 <meta property="article:author" content="Kaige Mao">
 <meta property="article:tag" content="Tracking">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mkg1204.github.io/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Framework.png">
+<meta name="twitter:image" content="https://mkg1204.github.io/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Framework.png">
   
   
   
@@ -66,12 +66,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/project/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -80,15 +80,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"mkg1204.github.io","root":"/project/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"9defe39ea2c58bed2836955914536579","google":"UA-321547858","gtag":"G-GGHYCG9QNT","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"Jr2hkmD3YwhNXv7A2QhnWRkl-gzGzoHsz","app_key":"4KQ8DePuHys7vpl5JrvCMNyw","server_url":"https://jr2hkmd3.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml"};
+    var CONFIG = {"hostname":"mkg1204.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"9defe39ea2c58bed2836955914536579","google":"UA-321547858","gtag":"G-GGHYCG9QNT","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"Jr2hkmD3YwhNXv7A2QhnWRkl-gzGzoHsz","app_key":"4KQ8DePuHys7vpl5JrvCMNyw","server_url":"https://jr2hkmd3.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/project/js/utils.js" ></script>
-  <script  src="/project/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
   
@@ -163,7 +163,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/project/">
+    <a class="navbar-brand" href="/">
       <strong>Kaigeの博客</strong>
     </a>
 
@@ -182,7 +182,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -194,7 +194,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -206,7 +206,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -218,7 +218,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -230,7 +230,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/project/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -259,7 +259,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/project/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -373,7 +373,7 @@
 </ul>
 <h2 id="method"><a class="markdownIt-Anchor" href="#method"></a> Method</h2>
 <h3 id="framework"><a class="markdownIt-Anchor" href="#framework"></a> Framework</h3>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Framework.png" srcset="/project/img/loading.gif" lazyload alt="算法整体框架"><br>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Framework.png" srcset="/img/loading.gif" lazyload alt="算法整体框架"><br>
 该文章提出的算法的整体框架如上图所示，Backbone提取到的特征首先会被划分为窗口并在空间维度上展开成为<code>window sequence</code>，之后被输入到transformer matching module中计算window attention。在这个过程中会通过循环移位操作生成大量Key-Value样本。经过transformer处理后的特征会被输入到和STARK<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="STARK ">[2]</span></a></sup>一样的<code>corner-based box head</code>中得到最终的跟踪结果。此外这篇文章还使用了与STARK一样的在线更新机制。</p>
 <h3 id="multi-scale-cyclic-shifting-window-attention"><a class="markdownIt-Anchor" href="#multi-scale-cyclic-shifting-window-attention"></a> Multi-Scale Cyclic Shifting Window Attention</h3>
 <h4 id="multi-scale-window-partition"><a class="markdownIt-Anchor" href="#multi-scale-window-partition"></a> Multi-scale window partition</h4>
@@ -388,12 +388,12 @@
 <p>由于不同head使用的窗口大小不同，因此不同head得到的输出大小也是不同的。</p>
 </li>
 </ol>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Cyclic_shifting.png" srcset="/project/img/loading.gif" lazyload alt="循环移位策略示意图"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Cyclic_shifting.png" srcset="/img/loading.gif" lazyload alt="循环移位策略示意图"></p>
 <p>为了解决这两个问题，作者使用了上图所示的循环移位策略：定义移位操作<code>shift(x, y)</code>表示在水平方向上平移x个像素，在垂直方向上平移y个像素；那么对于每个窗口来说，一共有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>2</mn><mi>r</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(2r-1)^{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>种不同的移位结果（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>∈</mo><mo stretchy="false">[</mo><mo>−</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">x, y \in [-r+1, r-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>各有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>r</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2r-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>种选择），这样就能够产生更多的窗口来得到更精细的相似度图。但这样只能解决上述第一个问题，如何使每个head输出大小是一致的在下面会讲到。</p>
 <h3 id="efficient-computation"><a class="markdownIt-Anchor" href="#efficient-computation"></a> Efficient Computation</h3>
 <h4 id="spatially-regularized-attention-mask"><a class="markdownIt-Anchor" href="#spatially-regularized-attention-mask"></a> Spatially regularized attention mask</h4>
 <p>由于循环移位产生的边界效应，靠近边缘处的样本有更大的概率会破坏目标的整体性和位置信息，因此作者使用了下图所示的空间正则化给这些边缘处的样本更低的权重。</p>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Spatial_Regularization.png" srcset="/project/img/loading.gif" lazyload alt="空间正则化"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Spatial_Regularization.png" srcset="/img/loading.gif" lazyload alt="空间正则化"></p>
 <h4 id="computational-optimization"><a class="markdownIt-Anchor" href="#computational-optimization"></a> Computational optimization</h4>
 <p>循环移位策略会引入大量的额外计算，作者使用了如下方法降低计算量：</p>
 <ul>
@@ -409,13 +409,13 @@
 </ul>
 <h2 id="experiments"><a class="markdownIt-Anchor" href="#experiments"></a> Experiments</h2>
 <h3 id="results"><a class="markdownIt-Anchor" href="#results"></a> Results</h3>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results1.png" srcset="/project/img/loading.gif" lazyload alt="在UAV,LaSOT,TrackingNet,GOT-10k上的实验结果"></p>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results2.png" srcset="/project/img/loading.gif" lazyload alt="在VOT2020上的实验结果"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results1.png" srcset="/img/loading.gif" lazyload alt="在UAV,LaSOT,TrackingNet,GOT-10k上的实验结果"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Results2.png" srcset="/img/loading.gif" lazyload alt="在VOT2020上的实验结果"></p>
 <h3 id="ablation-study"><a class="markdownIt-Anchor" href="#ablation-study"></a> Ablation Study</h3>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation1.png" srcset="/project/img/loading.gif" lazyload alt="各组件效果分析"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation1.png" srcset="/img/loading.gif" lazyload alt="各组件效果分析"></p>
 <p>从第二行可以看出由于计算的attention map比较粗糙，直接使用window attention会带来性能的大幅下降，而第三行添加了循环移位后可以很好的解决这一问题。</p>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation2.png" srcset="/project/img/loading.gif" lazyload alt="窗口大小分析"></p>
-<p><img src="/project/project/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation3.png" srcset="/project/img/loading.gif" lazyload alt="运行速度分析"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation2.png" srcset="/img/loading.gif" lazyload alt="窗口大小分析"></p>
+<p><img src="/2022/06/30/%E3%80%90CVPR2022%E3%80%91Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/Ablation3.png" srcset="/img/loading.gif" lazyload alt="运行速度分析"></p>
 <p>经过优化后速度提升了到了<strong>14.9FPS</strong>，作者是在Tesla T4上测试的，不知道在2080Ti上能跑到什么速度。</p>
 <h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Swin-Transformer <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.14030">https://arxiv.org/abs/2103.14030</a>
@@ -438,7 +438,7 @@
     
       <span class="category-chain">
         
-  <a href="/project/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="category-chain-item">论文阅读</a>
+  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="category-chain-item">论文阅读</a>
   
   
 
@@ -453,7 +453,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/project/tags/Tracking/">#Tracking</a>
+        <a href="/tags/Tracking/">#Tracking</a>
       
     </div>
   
@@ -466,7 +466,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>【CVPR2022】Transformer Tracking with Cyclic Shifting Window Attention</div>
-      <div>https://mkg1204.github.io/project/2022/06/30/【CVPR2022】Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/</div>
+      <div>https://mkg1204.github.io/2022/06/30/【CVPR2022】Transformer-Tracking-with-Cyclic-Shifting-Window-Attention/</div>
     </div>
     <div class="license-meta">
       
@@ -512,7 +512,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/project/2022/06/29/test/" title="test">
+                      <a href="/2022/06/29/test/" title="test">
                         <span class="hidden-mobile">test</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -669,8 +669,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/project/js/events.js" ></script>
-<script  src="/project/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -692,7 +692,7 @@
 
 
   
-    <script  src="/project/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -764,9 +764,9 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script defer src="/project/js/leancloud.js" ></script>
+  <script defer src="/js/leancloud.js" ></script>
 
-  <script  src="/project/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -774,7 +774,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/project/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
